@@ -10,6 +10,7 @@ import { TodoProvider } from './context/TodoContext';
 function App() {
   return (
     <TodoProvider>
+      <Router basename="/React-To-Do-List"></Router>
       <Router>
         <div className="App">
           <nav className="navbar">
