@@ -23,10 +23,10 @@ function App() {
           </nav>
           
           <Routes>
-            <Route path="/" element={<TodoList />} />
-            <Route path="/add" element={<AddTodo />} />
-            <Route path="/edit/:id" element={<EditTodo />} />
-            <Route path="/about" element={<About />} />
+            <Route path="react-to-do-list/" element={<TodoList />} />
+            <Route path="react-to-do-list/add" element={<AddTodo />} />
+            <Route path="react-to-do-list/edit/:id" element={<EditTodo />} />
+            <Route path="react-to-do-list/about" element={<About />} />
           </Routes>
         </div>
       </Router>
