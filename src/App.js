@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import TodoList from './components/TodoList';
 import AddTodo from './components/AddTodo';
@@ -8,9 +8,12 @@ import About from './components/About';
 import { TodoProvider } from './context/TodoContext';
 
 function App() {
+  useEffect(() => {
+    document.title = "To-Do List";
+  }, []);
+
   return (
     <TodoProvider>
-      {/* <Router basename="/react-to-do-list"></Router> */}
       <Router>
         <div className="App">
           <nav className="navbar">
@@ -21,12 +24,12 @@ function App() {
               <Link to="/about">About</Link>
             </div>
           </nav>
-          
+         
           <Routes>
-            <Route path="react-to-do-list/" element={<TodoList />} />
-            <Route path="react-to-do-list/add" element={<AddTodo />} />
-            <Route path="react-to-do-list/edit/:id" element={<EditTodo />} />
-            <Route path="react-to-do-list/about" element={<About />} />
+            <Route path="/" element={<TodoList />} />
+            <Route path="/add" element={<AddTodo />} />
+            <Route path="/edit/:id" element={<EditTodo />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
       </Router>
